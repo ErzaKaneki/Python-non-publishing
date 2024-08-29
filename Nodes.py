@@ -35,6 +35,7 @@ class Node:
 
     def get_value(self):
         return self.value
+    
     def get_next_node(self):
         return self.next_node
 
@@ -42,7 +43,6 @@ class Node:
         self.next_node = next_node
         return self.next_node
     
-my_node = Node(44)
 
 class LinkedList:
 
@@ -67,8 +67,3 @@ class LinkedList:
         return end_string
 
         
-ll = LinkedList(5)
-ll.insert_beginning(70)
-ll.insert_beginning(5675)
-ll.insert_beginning(90)
-print(ll.stringify_list())
