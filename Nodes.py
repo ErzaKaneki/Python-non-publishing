@@ -45,6 +45,7 @@ class Node:
 my_node = Node(44)
 
 class LinkedList:
+
     def __init__(self, value = None):
         self.head_node = Node(value)
 
@@ -55,3 +56,19 @@ class LinkedList:
         new_node = Node(new_value)
         new_node.set_next_node(self.head_node)
         self.head_node = new_node
+    
+    def stringify_list(self):
+        end_string = ""
+        current_node = self.get_head_node()
+        while current_node:
+            if current_node.get_value() != None:
+                end_string += str(current_node.get_value()) + "\n"
+            current_node = current_node.get_next_node()
+        return end_string
+
+        
+ll = LinkedList(5)
+ll.insert_beginning(70)
+ll.insert_beginning(5675)
+ll.insert_beginning(90)
+print(ll.stringify_list())
