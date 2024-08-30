@@ -203,3 +203,15 @@
 # print(test_list.stringify_list())
 # middle_node = find_middle(test_list)
 # print(middle_node.value)
+
+#CAN ALSO USE A MODULO EXPRESSION TO MOVE SLOWER RUNNER
+def find_middle_alt(linked_list):
+  count = 0
+  explorer = linked_list.head_node
+  claimer = linked_list.head_node
+  while explorer:
+    explorer = explorer.get_next_node()
+    if count % 2 != 0:
+      claimer = claimer.get_next_node()
+    count += 1
+  return claimer
