@@ -76,7 +76,7 @@ class LinkedList:
                 previous_node = current_node
                 current_node = current_node.next_node
                 if current_node.get_value() == value_to_remove:
-                    previous_node.next_node = current_node.next_node
+                    previous_node.next_node = current_node.next_node  #OR-> current_node.set_next_node(next_node.get_next_node()) <- TRANSPARENCY
                     current_node = None
 
 LL = LinkedList()
