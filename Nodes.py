@@ -159,7 +159,7 @@
 # def nth_last_node(linked_list, n):
 #   claimer = None
 #   explorer = linked_list.head_node
-#   count =1
+#   count = 1
 #   while explorer:
 #     explorer = explorer.get_next_node()
 #     count += 1
@@ -180,3 +180,26 @@
 # print(test_list.stringify_list())
 # nth_last = nth_last_node(test_list, 4)
 # print(nth_last.value)
+
+
+#USING TWO RUNNERS TO FIND MIDDLE OF THE LINKEDLIST (FAST AND SLOW)
+# def find_middle(linked_list):
+#   claimer = linked_list.head_node
+#   explorer = linked_list.head_node
+#   while explorer:
+#     explorer = explorer.get_next_node()
+#     if explorer:
+#       explorer = explorer.get_next_node()
+#       claimer = claimer.get_next_node()
+#   return claimer
+
+# def generate_test_linked_list(length):
+#   linked_list = LinkedList()
+#   for i in range(length, 0, -1):
+#     linked_list.insert_beginning(i)
+#   return linked_list
+
+# test_list = generate_test_linked_list(7)
+# print(test_list.stringify_list())
+# middle_node = find_middle(test_list)
+# print(middle_node.value)
