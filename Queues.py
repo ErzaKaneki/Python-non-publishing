@@ -1,4 +1,6 @@
 from Nodes import Node
+from Nodes import DoublyLinkedList
+dll = DoublyLinkedList()
 class Queue:
     def __init__(self,max_size = None):
         self.head = None
@@ -28,3 +30,20 @@ class Queue:
             return True
         else:
             return False
+        
+    def enqueue(self, value):
+        if self.has_space() == True:
+            item_to_add = Node(value)
+            print("Adding " + str(item_to_add.get_value()) + " to the queue!")
+            if self.is_empty() == True:
+                dll.add_to_head(item_to_add)
+                dll.add_to_tail(item_to_add)
+            else:
+                dll.add_to_tail(item_to_add)
+            self.size += 1
+        else:
+            print("Sorry, no more room!")
+        
+q = Queue()
+q.enqueue("all the fluffy kitties")
+        
