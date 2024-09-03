@@ -7,7 +7,7 @@ class Stack:
         self.size = 0
     
     def peek(self):
-        if self.size > 0:
+        if not self.is_empty():
             return self.top_item.get_value()
         else:
             print("This Stack is empty.")
@@ -23,7 +23,7 @@ class Stack:
 
 
     def pop(self):
-        if self.size > 0:
+        if not self.is_empty():
             item_to_remove = self.top_item
             self.top_item = item_to_remove.get_next_node()
             self.size -= 1
@@ -35,4 +35,10 @@ class Stack:
         if self.limit > self.size:
             return True
         else: 
+            return False
+    
+    def is_empty(self):
+        if self.size == 0:
+            return True
+        else:
             return False
