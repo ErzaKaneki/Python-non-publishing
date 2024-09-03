@@ -365,7 +365,7 @@ subway.add_to_tail("Penn Station")
 subway.add_to_tail("Wall Street")
 subway.add_to_tail("Brooklyn Bridge")
 
-subway.remove_by_value("Central Park")
-subway.remove_by_value("Brooklyn Bridge")
+subway.remove_head()
+subway.remove_tail()
 
 print(subway.stringify_list())
