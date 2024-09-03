@@ -263,8 +263,8 @@ class DoublyLinkedList:
     current_tail = self.tail_node
 
     if current_tail != None:
-      current_tail.set_prev_node(new_tail)
-      new_tail.set_next_node(current_tail)
+      current_tail.set_next_node(new_tail)
+      new_tail.set_prev_node(current_tail)
     
     self.tail_node = new_tail
 
@@ -361,5 +361,8 @@ subway = DoublyLinkedList()
 subway.add_to_head("Times Square")
 subway.add_to_head("Grand Central")
 subway.add_to_head("Central Park")
+subway.add_to_tail("Penn Station")
+subway.add_to_tail("Wall Street")
+subway.add_to_tail("Brooklyn Bridge")
 
 print(subway.stringify_list())
