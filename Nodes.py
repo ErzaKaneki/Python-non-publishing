@@ -368,4 +368,6 @@ subway.add_to_tail("Brooklyn Bridge")
 subway.remove_head()
 subway.remove_tail()
 
+subway.remove_by_value("Times Square")
+
 print(subway.stringify_list())
