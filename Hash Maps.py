@@ -12,11 +12,23 @@ class HashMap:
         return hash_code % self.array_size
     
     def assign(self, key, value):
-        self.array[self.compressor(self.hash(key))] = value
+        array_index = self.compressor(self.hash(key))
+        current_array_value = self.array[array_index]
+        
+        if current_array_value is None:
+            self.array[array_index] = [key, value]
+            return
+        
+        if current_array_value[0] == key:
+            self.array[array_index] = [key, value]
+            return
 
     def retrieve(self, key):
-        return self.array[self.compressor(self.hash(key))]
-    
-hash_map = HashMap(20)
-hash_map.assign("gneiss", "metamorphic")
-print(hash_map.retrieve("gneiss"))
+        array_index = self.compressor(self.hash(key))
+        possible_return_value = self.array[array_index]
+
+        if possible_return_value == None:
+            return None
+        
+        if possible_return_value[0] == key:
+            return possible_return_value[1]
