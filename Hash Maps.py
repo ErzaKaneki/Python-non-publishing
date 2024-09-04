@@ -13,3 +13,10 @@ class HashMap:
     
     def assign(self, key, value):
         self.array[self.compressor(self.hash(key))] = value
+
+    def retrieve(self, key):
+        return self.array[self.compressor(self.hash(key))]
+    
+hash_map = HashMap(20)
+hash_map.assign("gneiss", "metamorphic")
+print(hash_map.retrieve("gneiss"))
