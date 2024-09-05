@@ -63,7 +63,6 @@ class HashMap:
                 return None
         
             if possible_return_value[0] == key:
-                self.array[retrieving_array_index] = [key, value]
                 return possible_return_value
             
             retrieval_collisions += 1
