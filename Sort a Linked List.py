@@ -16,7 +16,11 @@ def sort_linked_list(linked_list):
     print("The original linked list is:\n{0}".format(linked_list.stringify_list()))
     new_linked_list = LinkedList()
     #Write Code Here!
-    
+    while linked_list.get_head_node() != None:
+        maxx = find_max(linked_list)
+        new_linked_list.insert_beginning(maxx)
+        linked_list.remove_node(maxx)
+        
     return new_linked_list
 
   
@@ -45,5 +49,5 @@ ll_3.insert_beginning(-92)
 print("The sorted linked list is:\n{0}".format(sort_linked_list(ll_3).stringify_list()))
 
 #Runtime
-runtime = "REPLACE"
+runtime = "N^2"
 print("The runtime of sort_linked_list is O({0})\n\n".format(runtime))
