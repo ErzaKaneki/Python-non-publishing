@@ -56,23 +56,25 @@
 #   print(set)
 
 #UNPACKING LISTS WITH RECURSION
-def flatten(my_list):
-    result = []
-    for item in my_list:
-        if isinstance(item, list):
-            #print("List found!")
-            flat_list = flatten(item)
-            for element in  item:
-                if isinstance(element, list):
-                    flat_element = flatten(element)
-                    for spec in element:
-                        result.append(spec)
-                else:        
-                    result.append(element)
-        else:
-            result.append(item)
-    return result
+# def flatten(my_list):
+#     result = []
+#     for item in my_list:
+#         if isinstance(item, list):
+#             #print("List found!")
+#             flat_list = flatten(item)
+#             for element in  item:
+#                 if isinstance(element, list):
+#                     flat_element = flatten(element)
+#                     for spec in element:
+#                         result.append(spec)
+#                 else:        
+#                     result.append(element)
+#         else:
+#             result.append(item)
+#     return result
 
-planets = ['mercury', 'venus', ['earth'], 'mars', [['jupiter', 'saturn']], 'uranus', ['neptune', 'pluto']]
+# planets = ['mercury', 'venus', ['earth'], 'mars', [['jupiter', 'saturn']], 'uranus', ['neptune', 'pluto']]
 
-print(flatten(planets))
+# print(flatten(planets))
+
+
