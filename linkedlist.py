@@ -33,3 +33,16 @@ class LinkedList:
         else:
           current_node = next_node
 
+  def find_node_key_value(self, value_to_find):
+    current_node = self.head_node
+    if value_to_find in current_node.get_value():
+      value = current_node.get_value()
+      return value[1]
+    else:
+      while current_node:
+        next_node = current_node.get_next_node()
+        if value_to_find in next_node.get_value():
+          value = next_node.get_value()
+          return value[1]
+        else:
+          current_node = next_node
