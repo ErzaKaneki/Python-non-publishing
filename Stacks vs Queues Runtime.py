@@ -24,14 +24,14 @@ print("The top value in my stack is: {0}".format(my_stack.peek()))
 print("The front value of my queue is: {0}".format(my_queue.peek()))
 
 #Get First Value added to Queue
-first_value_added_to_queue = "REPLACE" #Checkpoint 2
+first_value_added_to_queue = my_queue.peek()
 print("\nThe first value enqueued to the queue was {0}".format(first_value_added_to_queue))
-queue_runtime = "REPLACE" #Checkpoint 3
+queue_runtime = "1"
 print("The runtime of getting the front of the queue is O({0})".format(queue_runtime))
 
 #Get First Value added to Stack
 #Write Code Here for #Checkpoint 4
-first_value_added_to_stack = "REPLACE"
+first_value_added_to_stack = my_stack.get_bottom_item()
 print("\nThe first value pushed onto the stack was {0}".format(first_value_added_to_stack))
-stack_runtime = "REPLACE" #Checkpoint 5
+stack_runtime = "N" #Checkpoint 5
 print("The runtime of getting the bottom of the stack is O({0})".format(stack_runtime))
