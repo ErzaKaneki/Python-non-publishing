@@ -31,5 +31,5 @@ print("The runtime of retrieving a value from a hashmap is O({0})\n\n".format(ha
 #Write Code here for Checkpoint 3
 linked_list_zachary_disease = my_linked_list.find_node_key_value("Zachary")
 print("Zachary's disease is {0}".format(linked_list_zachary_disease))
-linked_list_runtime = "N^2" #Checkpoint 4
+linked_list_runtime = "N" #Checkpoint 4
 print("The runtime of retrieving the first value added to a linked list is O({0})\n\n".format(linked_list_runtime))
