@@ -29,10 +29,28 @@
 # print(sum_to_one(7))
 
 
-def factorial(n):
-    if n == 1:
-        return n
-    elif n != 1:
-        return n * factorial(n - 1)
+# def factorial(n):
+#     if n == 1:
+#         return n
+#     elif n != 1:
+#         return n * factorial(n - 1)
     
-print(factorial(12)) #found that this only works up to 998 XD  999 and up will throw a RecursionError
+# print(factorial(12)) #found that this only works up to 998 XD  999 and up will throw a RecursionError
+
+
+def power_set(my_list):
+    # base case: an empty list
+    if len(my_list) == 0:
+        return [[]]
+    # recursive step: subsets without first element
+    power_set_without_first = power_set(my_list[1:])
+    # subsets with first element
+    with_first = [ [my_list[0]] + rest for rest in power_set_without_first ]
+    # return combination of the two
+    return with_first + power_set_without_first
+  
+universities = ['MSU', 'UND', 'NDSU', 'NDSCS']
+power_set_of_universities = power_set(universities)
+
+for set in power_set_of_universities:
+  print(set)
