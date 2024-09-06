@@ -37,20 +37,42 @@
     
 # print(factorial(12)) #found that this only works up to 998 XD  999 and up will throw a RecursionError
 
-
-def power_set(my_list):
-    # base case: an empty list
-    if len(my_list) == 0:
-        return [[]]
-    # recursive step: subsets without first element
-    power_set_without_first = power_set(my_list[1:])
-    # subsets with first element
-    with_first = [ [my_list[0]] + rest for rest in power_set_without_first ]
-    # return combination of the two
-    return with_first + power_set_without_first
+#POWER SETS @.@
+# def power_set(my_list):
+#     # base case: an empty list
+#     if len(my_list) == 0:
+#         return [[]]
+#     # recursive step: subsets without first element
+#     power_set_without_first = power_set(my_list[1:])
+#     # subsets with first element
+#     with_first = [ [my_list[0]] + rest for rest in power_set_without_first ]
+#     # return combination of the two
+#     return with_first + power_set_without_first
   
-universities = ['MSU', 'UND', 'NDSU', 'NDSCS']
-power_set_of_universities = power_set(universities)
+# universities = ['MSU', 'UND', 'NDSU', 'NDSCS']
+# power_set_of_universities = power_set(universities)
 
-for set in power_set_of_universities:
-  print(set)
+# for set in power_set_of_universities:
+#   print(set)
+
+#UNPACKING LISTS WITH RECURSION
+def flatten(my_list):
+    result = []
+    for item in my_list:
+        if isinstance(item, list):
+            #print("List found!")
+            flat_list = flatten(item)
+            for element in  item:
+                if isinstance(element, list):
+                    flat_element = flatten(element)
+                    for spec in element:
+                        result.append(spec)
+                else:        
+                    result.append(element)
+        else:
+            result.append(item)
+    return result
+
+planets = ['mercury', 'venus', ['earth'], 'mars', [['jupiter', 'saturn']], 'uranus', ['neptune', 'pluto']]
+
+print(flatten(planets))
