@@ -92,20 +92,38 @@
 # fibonacci_runtime = "2^N"
 
 
-def build_bst(my_list):
-    if len(my_list) == 0:
-        return "No Child"
-    middle_idx = len(my_list) // 2
-    middle_value = my_list[middle_idx]
-    print("Middle index: {I}".format(I = middle_idx))
-    print("Middle value: {V}".format(V = middle_value))
-    tree_node = {"data":middle_value}
-    tree_node["left_child"] = build_bst(my_list[:middle_idx])
-    tree_node["right_child"] = build_bst(my_list[middle_idx + 1:])
-    return tree_node
+# def build_bst(my_list):
+#     if len(my_list) == 0:
+#         return "No Child"
+#     middle_idx = len(my_list) // 2
+#     middle_value = my_list[middle_idx]
+#     print("Middle index: {I}".format(I = middle_idx))
+#     print("Middle value: {V}".format(V = middle_value))
+#     tree_node = {"data":middle_value}
+#     tree_node["left_child"] = build_bst(my_list[:middle_idx])
+#     tree_node["right_child"] = build_bst(my_list[middle_idx + 1:])
+#     return tree_node
 
-sorted_list = [12, 13, 14, 15, 16]
-binary_search_tree = build_bst(sorted_list)
-print(binary_search_tree)
+# sorted_list = [12, 13, 14, 15, 16]
+# binary_search_tree = build_bst(sorted_list)
+# print(binary_search_tree)
 
-runtime = "N*logN"
+# runtime = "N*logN"
+
+
+# def factorial(n):
+#     if n < 0:
+#         return ValueError("Inputs 0 or larger only")
+#     if n <= 1:
+#         return 1
+#     while n > 1:
+#         product = n * (n - 1)
+#         n -= 1
+#         return product
+
+
+# print(factorial(3) == 6) #True
+# print(factorial(0) == 1) #True
+# print(factorial(5) == 120) #False
+
+
