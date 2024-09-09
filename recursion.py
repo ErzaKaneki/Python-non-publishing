@@ -169,3 +169,93 @@
 # print(find_min([42, 17, 2, -1, 67]) == -1)
 # print(find_min([]) == None)
 # print(find_min([13, 72, 19, 5, 86]) == 5)
+
+
+# def is_palindrome(my_string):
+#     if len(my_string) < 2:
+#         return True
+#     if my_string[0] != my_string[-1]:
+#         return False
+#     return is_palindrome(my_string[1:-1])
+
+
+
+# print(is_palindrome("abba") == True)
+# print(is_palindrome("abcba") == True)
+# print(is_palindrome("") == True)
+# print(is_palindrome("abcd") == False)
+
+
+# def multiplication(num_1, num_2):
+#     if num_1 == 0 or num_2 == 0:
+#         return 0
+#     if num_2 > 0:
+#         return num_1 + multiplication(num_1, num_2 - 1)
+        
+# print(multiplication(3, 7) == 21)
+# print(multiplication(5, 5) == 25)
+# print(multiplication(0, 4) == 0)
+
+
+# def depth(tree):
+#     if tree == None:
+#         return 0
+    
+#     left_depth = depth(tree["left_child"])
+#     right_depth = depth(tree["right_child"])
+
+#     if left_depth > right_depth:
+#        return left_depth + 1
+#     else:
+#        return right_depth + 1
+
+# def build_bst(my_list):
+#   if len(my_list) == 0:
+#     return None
+
+#   mid_idx = len(my_list) // 2
+#   mid_val = my_list[mid_idx]
+
+#   tree_node = {"data": mid_val}
+#   tree_node["left_child"] = build_bst(my_list[ : mid_idx])
+#   tree_node["right_child"] = build_bst(my_list[mid_idx + 1 : ])
+
+#   return tree_node
+
+# # HELPER VARIABLES
+# tree_level_1 = build_bst([1])
+# tree_level_2 = build_bst([1, 2, 3])
+# tree_level_4 = build_bst([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]) 
+
+# # test cases
+# print(depth(tree_level_1) == 1)
+# print(depth(tree_level_2) == 2)
+# print(depth(tree_level_4) == 4)
+
+
+# def move_to_end(lst, val):
+#     result = []
+#     if len(lst) == 0:
+#         return []
+    
+#     if lst[0] == val:
+#         result += move_to_end(lst[1:], val)
+#         result.append(lst[0])
+#     else:
+#         result.append(lst[0])
+#         result += move_to_end(lst[1:], val)
+#     return result
+
+# gemstones = ["Amber", "Sapphire", "Amber", "Jade"]
+# print(move_to_end(gemstones, "Amber"))
+
+
+def wrap_string(str, n):
+    result = ""
+    if n <= 0:
+        return str
+    result = "<" + wrap_string(str, n - 1) + ">"
+    return result
+
+wrapped = wrap_string("Pearl", 3)
+print(wrapped)
