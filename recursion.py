@@ -127,19 +127,32 @@
 # print(factorial(5) == 120) #False
 
 
-def fibonacci(n):
-    fibs = [0, 1]
+# def fibonacci(n):
+#     fibs = [0, 1]
 
-    if n <= len(fibs) - 1:
-        return n
-    else:
-        while n > len(fibs) - 1:
-            next_fib = fibs[(len(fibs) - 1)] + fibs[(len(fibs) - 2)]
-            fibs.append(next_fib)
+#     if n <= len(fibs) - 1:
+#         return n
+#     else:
+#         while n > len(fibs) - 1:
+#             next_fib = fibs[(len(fibs) - 1)] + fibs[(len(fibs) - 2)]
+#             fibs.append(next_fib)
 
-        return fibs[n]
+#         return fibs[n]
 
 
-print(fibonacci(3) == 2)
-print(fibonacci(7) == 13)
-print(fibonacci(0) == 0)
+# print(fibonacci(3) == 2)
+# print(fibonacci(7) == 13)
+# print(fibonacci(0) == 0)
+
+
+# def sum_digits(n):
+#     if n <= 9:
+#         return n
+#     last_digit = n % 10
+#     return sum_digits(n // 10) + last_digit
+
+# print(sum_digits(12) == 3)
+# print(sum_digits(552) == 12)
+# print(sum_digits(123456789) == 45)
+
+
