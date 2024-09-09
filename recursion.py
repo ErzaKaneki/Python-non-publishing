@@ -127,3 +127,19 @@
 # print(factorial(5) == 120) #False
 
 
+def fibonacci(n):
+    fibs = [0, 1]
+
+    if n <= len(fibs) - 1:
+        return n
+    else:
+        while n > len(fibs) - 1:
+            next_fib = fibs[(len(fibs) - 1)] + fibs[(len(fibs) - 2)]
+            fibs.append(next_fib)
+
+        return fibs[n]
+
+
+print(fibonacci(3) == 2)
+print(fibonacci(7) == 13)
+print(fibonacci(0) == 0)
