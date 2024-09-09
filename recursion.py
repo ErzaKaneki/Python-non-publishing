@@ -78,15 +78,34 @@
 # print(flatten(planets))
 
 
-def fibonacci(n):
-    if n == 1:
-        return 1
-    if n == 0:
-        return 0
-    return fibonacci(n - 1) + fibonacci(n - 2)
+# def fibonacci(n):
+#     if n == 1:
+#         return 1
+#     if n == 0:
+#         return 0
+#     return fibonacci(n - 1) + fibonacci(n - 2)
 
-print(fibonacci(5))
-print(fibonacci(10))
-print(fibonacci(7))
+# print(fibonacci(5))
+# print(fibonacci(10))
+# print(fibonacci(7))
 
-fibonacci_runtime = "2^N"
+# fibonacci_runtime = "2^N"
+
+
+def build_bst(my_list):
+    if len(my_list) == 0:
+        return "No Child"
+    middle_idx = len(my_list) // 2
+    middle_value = my_list[middle_idx]
+    print("Middle index: {I}".format(I = middle_idx))
+    print("Middle value: {V}".format(V = middle_value))
+    tree_node = {"data":middle_value}
+    tree_node["left_child"] = build_bst(my_list[:middle_idx])
+    tree_node["right_child"] = build_bst(my_list[middle_idx + 1:])
+    return tree_node
+
+sorted_list = [12, 13, 14, 15, 16]
+binary_search_tree = build_bst(sorted_list)
+print(binary_search_tree)
+
+runtime = "N*logN"
