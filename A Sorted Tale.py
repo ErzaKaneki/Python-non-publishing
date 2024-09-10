@@ -15,15 +15,23 @@ def by_author_ascending(book_a, book_b):
 def by_total_length(book_a, book_b):
     return len(book_a['author']) + len(book_a['title']) > len(book_b['author']) + len(book_b['title'])
 
-sort_1 = sorts.bubble_sort(bookshelf, by_title_ascending)
-for book in sort_1:
-    print(book['title'])
+# sort_1 = sorts.bubble_sort(bookshelf, by_title_ascending)
+# for book in sort_1:
+#     print(book['title'])
 
-sort_2 = sorts.bubble_sort(bookshelf_v1, by_author_ascending)
-for book in sort_2:
-    print(book['author'])
+# sort_2 = sorts.bubble_sort(bookshelf_v1, by_author_ascending)
+# for book in sort_2:
+#     print(book['author'])
 
-print("\nQuicksort:")
-sorts.quicksort(bookshelf_v2, 0, len(bookshelf_v2) - 1, by_author_ascending)
-for book in bookshelf_v2:
-    print(book['author'])
+# print("\nQuicksort:")
+# sorts.quicksort(bookshelf_v2, 0, len(bookshelf_v2) - 1, by_author_ascending)
+# for book in bookshelf_v2:
+#     print(book['author'])
+
+# sort_3 = sorts.bubble_sort(long_bookshelf, by_total_length)
+# for book in sort_3:
+#     print(book['title'])
+
+sorts.quicksort(long_bookshelf, 0, len(long_bookshelf) - 1, by_total_length)
+for book in long_bookshelf:
+    print(str((len(book['author']) + len(book['title']))) + " " + book['title'])
