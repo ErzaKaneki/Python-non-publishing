@@ -7,13 +7,13 @@ def dynamic_knapsack(weight_cap, weights, values):
     for index in range(rows):
         matrix[index] = [ -1 for y in range(cols)]
     
-        for weight in range(cols):
-            if index == 0 or weight == 0:
-                matrix[index][weight] = 0
-            elif weights[index - 1] <= weight:
-                matrix[index][weight] = max(values[index - 1] + matrix[index - 1][weight - weights[index - 1]], matrix[index -1][weight])
+        for w in range(cols):
+            if index == 0 or w == 0:
+                matrix[index][w] = 0
+            elif weights[index - 1] <= w:
+                matrix[index][w] = max(values[index - 1] + matrix[index - 1][w - weights[index - 1]], matrix[index -1][w])
             else:
-                matrix[index][weight] = matrix[index - 1][weight]
+                matrix[index][w] = matrix[index - 1][w]
     return matrix[rows - 1][weight_cap]
 
 values = [50, 100, 150, 200]
