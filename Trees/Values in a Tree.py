@@ -12,7 +12,7 @@ docs.children = [my_wish, my_todo]
 photos.children = [my_cat, my_dog]
 
 print(sample_root_node)
-goal_path = bfs(sample_root_node, "Z")
+goal_path = bfs(sample_root_node, "Fluffy.jpg")
 if goal_path is None:
     print("No path found.")
 else:
