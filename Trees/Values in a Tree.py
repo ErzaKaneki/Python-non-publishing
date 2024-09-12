@@ -1,5 +1,5 @@
 from tree import TreeNode
-
+from bfs import bfs
 sample_root_node = TreeNode("Home")
 docs = TreeNode("Documents")
 photos = TreeNode("Photos")
@@ -12,7 +12,7 @@ docs.children = [my_wish, my_todo]
 photos.children = [my_cat, my_dog]
 
 print(sample_root_node)
-goal_path = None
+goal_path = bfs(sample_root_node, "Z")
 if goal_path is None:
     print("No path found.")
 else:
