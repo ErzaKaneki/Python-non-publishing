@@ -5,13 +5,13 @@ print_tree(sample_root_node)
 def dfs(root, target, path = ()):
     path += (root,)
     if root.value == target:
-        return root
+        return path
     
     for child in root.children:
-        node_found = dfs(child, target, path)
+        path_found = dfs(child, target, path)
         
-        if node_found != None:
-            return node_found
+        if path_found != None:
+            return path_found
    
     return None
 
