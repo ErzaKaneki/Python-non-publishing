@@ -12,3 +12,10 @@ docs.children = [my_wish, my_todo]
 photos.children = [my_cat, my_dog]
 
 print(sample_root_node)
+goal_path = None
+if goal_path is None:
+    print("No path found.")
+else:
+    print("Path found.")
+    for node in goal_path:
+        print(node.value)
