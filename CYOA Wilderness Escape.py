@@ -9,7 +9,7 @@ class TreeNode:
     def traverse(self):
         story_node = self
         print(story_node.story_piece)
-        while story_node.choices is not None:
+        while len(story_node.choices) != 0:
             choice = input("Enter 1 or 2 to continue the story: ")
             valid_options =["1", "2"]
             while choice not in valid_options:
@@ -34,15 +34,35 @@ choice_a = TreeNode("""
 The bear is startled and runs away.\n
                     Do you:
                     1) Shout 'Sorry bear!'
-                    2) Yell 'Hooray!'""")
+                    2) Yell 'Hooray!'\n""")
 
 choice_b = TreeNode("""
 You come across a clearing full of flowers.
 The bear follows you and asks 'What gives?'\n
                     Do you:
-                    1) Gasp 'Atalking bear!'
-                    2) Explain that the bear scared you.""")
+                    1) Gasp 'A talking bear!'
+                    2) Explain that the bear scared you.\n""")
+
 story_root.add_child(choice_a)
 story_root.add_child(choice_b)
+
+choice_a_1 = TreeNode("""
+The bear returns and tells you it's been a rough week.\nAfter making peace with a talking bear, he shows you the way out of the forest.\n\n
+                    YOU HAVE ESCAPED THE WILDERNESS.""")
+choice_a_2 = TreeNode("""
+The bear returns and tells you that bullying is not okay before leaving you alone in the wilderness.\n\n
+                    YOU REMAIN LOST.""")
+
+choice_a.add_child(choice_a_1)
+choice_a.add_child(choice_a_2)
+
+choice_b_1 = TreeNode("""
+The bear is unamused.  After smelling the flowers,\nit turns around and leaves you alone.\n\n
+                    YOU REMAIN LOST.""")
+choice_b_2 = TreeNode("""\nThe bear understands and apologizes for startling you.\nYour new friend shows you a path leading out of the forest.\n\n
+                    YOU HAVE EXCAPED THE WILDERNESS.""")
+
+choice_b.add_child(choice_b_1)
+choice_b.add_child(choice_b_2)
 
 TreeNode.traverse(story_root)
