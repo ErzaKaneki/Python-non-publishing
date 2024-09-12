@@ -1,4 +1,4 @@
-from Breadth_first_search_example import TreeNode
+from tree import TreeNode
 
 sample_root_node = TreeNode("Home")
 docs = TreeNode("Documents")
