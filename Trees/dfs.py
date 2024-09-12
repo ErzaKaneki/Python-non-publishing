@@ -8,7 +8,7 @@ def dfs(root, target, path = ()):
         return root
     
     for child in root.children:
-        node_found = dfs(child, target)
+        node_found = dfs(child, target, path)
         
         if node_found != None:
             return node_found
