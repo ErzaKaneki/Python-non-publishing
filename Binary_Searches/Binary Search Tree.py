@@ -29,14 +29,19 @@ class BinarySearchTree:
         else:
             return None
 
+    def depth_first_traversal(self):
+        if self.left is not None:
+            self.left.depth_first_traversal()
+        print(f'Depth={self.depth}, Value={self.value}')
+        if self.right is not None:
+            self.right.depth_first_traversal()
 
-root = BinarySearchTree(100)
-root.insert(50)
-root.insert(125)
-root.insert(75)
-root.insert(25)
+tree = BinarySearchTree(48)
+tree.insert(24)
+tree.insert(55)
+tree.insert(26)
+tree.insert(38)
+tree.insert(56)
+tree.insert(74)
 
-run1 = root.get_node_by_value(75)
-print(run1.value)
-run2 = root.get_node_by_value(55)
-print(run2)
+tree.depth_first_traversal()
