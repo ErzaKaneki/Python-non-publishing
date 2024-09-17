@@ -23,6 +23,5 @@ class Graph:
             else:
                 vertex = self.graph_dict[current_vertex]
                 next_vertices = vertex.get_edges()
-                next_vertices = [vertex for vertex in next_vertices if vertex not in seen]
-                start.extend(next_vertices)
+                start += [vertex for vertex in next_vertices if vertex not in seen]
         return False
