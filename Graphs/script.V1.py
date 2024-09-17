@@ -1,20 +1,24 @@
 from graph import Graph
 from vertex import Vertex
 
-railway = Graph()
+no_path_exists = True
 
-callan = Vertex('callan')
-peel = Vertex('peel')
-harwick = Vertex('harwick')
 
-railway.add_vertex(callan)
-railway.add_vertex(peel)
-railway.add_vertex(harwick)
+directed_railway = Graph(True)
 
-railway.add_edge(callan, peel, 12)
-railway.add_edge(harwick, callan, 7)
-railway.add_edge(peel, harwick)
+callan_station = Vertex('callan')
+peel_station = Vertex('peel')
+ulfstead_station = Vertex('ulfstead')
+harwick_station = Vertex('harwick')
 
-print(callan.edges)
-print(harwick.edges)
-print(peel.edges)
+directed_railway.add_vertex(callan_station)
+directed_railway.add_vertex(peel_station)
+directed_railway.add_vertex(harwick_station)
+directed_railway.add_vertex(ulfstead_station)
+
+directed_railway.add_edge(harwick_station, peel_station)
+directed_railway.add_edge(peel_station, callan_station)
+
+
+path_exists = directed_railway.find_path('harwick', 'harwick')
+print(path_exists)
