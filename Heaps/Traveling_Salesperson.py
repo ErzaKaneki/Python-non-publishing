@@ -19,6 +19,7 @@ def build_tsp_graph(directed):
     for val in ['a', 'b', 'c', 'd']:
         vertex = Vertex(val)
         vertices.append(vertex)
+        g.add_vertex(vertex)
 
     g.add_edge(vertices[0], vertices[1], 3)
     g.add_edge(vertices[0], vertices[2], 4)
@@ -34,3 +35,48 @@ def build_tsp_graph(directed):
     g.add_edge(vertices[3], vertices[2], 1)
     return g
 
+def visited_all_nodes(visited_vertices):
+    for vertex in visited_vertices:
+        if visited_vertices[vertex] == "unvisited":
+            return False
+    return True
+
+def traveling_salesperson(graph):
+    ts_path = ""
+    visited_vertices = {x: "unvisited" for x in graph.graph_dict}
+    current_vertex = random.choice(list(graph.graph_dict))
+    visited_vertices[current_vertex] = "visited"
+    ts_path += current_vertex
+    visited_all_vertices = visited_all_nodes(visited_vertices)
+    
+    while not visited_all_vertices:
+        current_vertex_edges = graph.graph_dict[current_vertex].get_edges()
+        current_vertex_edge_weights = {}
+        
+        for edge in current_vertex_edges:
+            current_vertex_edge_weights[edge] = graph.graph_dict[current_vertex].get_edge_weight(edge)
+        found_next_vertex = False
+        next_vertex = ""
+        
+        while not found_next_vertex:
+            if current_vertex_edge_weights is None:
+                break
+            next_vertex = min(current_vertex_edge_weights, key = current_vertex_edge_weights.get)
+            
+            if visited_vertices[next_vertex] == "visited":
+                current_vertex_edge_weights.pop(next_vertex)
+            else:
+                found_next_vertex = True
+            if current_vertex_edge_weights is None:
+                visited_all_vertices = True
+            else:
+                current_vertex = next_vertex
+                visited_vertices[current_vertex] = "visited"
+                ts_path += current_vertex
+        visited_all_vertices = visited_all_nodes(visited_vertices)
+    print(ts_path)
+
+
+graph = build_tsp_graph(False)
+print_graph(graph)
+traveling_salesperson(graph)
