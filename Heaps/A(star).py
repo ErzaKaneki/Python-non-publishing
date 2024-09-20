@@ -1,11 +1,13 @@
 from math import inf
+import math
 from heapq import heappop, heappush
-from manhattan_graph import manhattan_graph, penn_station, grand_central_station
+from euclidean_graph import euclidean_graph, bengaluru, jaipur
+
 
 def heuristic(start, target):
     x_distance = abs(start.position[0] - target.position[0])
     y_distance = abs(start.position[1] - target.position[1])
-    return x_distance + y_distance
+    return math.sqrt((x_distance**2) + (y_distance**2))
 
 def a_star(graph, start, target):
     print("Starting A* algorithm")
@@ -29,8 +31,8 @@ def a_star(graph, start, target):
                 heappush(vertices_to_explore, (new_distance, neighbor))
                 count += 1
                 print("\nAt " + vertices_to_explore[0][1].name)
-    print("Found a path from {0} to {1} in {2} steps: ".format(start.name, target.name, count))
+    print("Found a path from {0} to {1} in {2} steps: ".format(start.name, target.name, count), paths_and_distances[target][1])
 
     return paths_and_distances[target][1]
 
-a_star(manhattan_graph, penn_station, grand_central_station)
+a_star(euclidean_graph, jaipur, bengaluru)
