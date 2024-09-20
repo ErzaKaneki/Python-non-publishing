@@ -45,4 +45,4 @@ cities_graph = {
     kolkata: set([(delhi, 12.693718), (mumbai, 15.87195), (chennai, 12.50541), (hyderabad, 11.151231), (bengaluru, 14.437532)]),
     bengaluru: set([(delhi, 15.676582), (mumbai, 7.699756), (chennai, 2.658671), (hyderabad, 4.507721), (kolkata, 14.437532)])
 }
-a_star(cities_graph, delhi, varanasi)
+print(a_star(cities_graph, jaipur,bengaluru ))
