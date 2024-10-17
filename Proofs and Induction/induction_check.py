@@ -10,3 +10,12 @@ while counter < end:
     else:
         x += 1
 print(guess)    
+
+a = -1
+n = 0
+b = n ** 2
+
+if a == b:
+  print('True')
+else:
+  print('False')
