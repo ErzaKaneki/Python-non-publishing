@@ -19,3 +19,9 @@ if a == b:
   print('True')
 else:
   print('False')
+  
+  
+x = 1
+if x <= x ** 2:
+    k = x
+print(k)
