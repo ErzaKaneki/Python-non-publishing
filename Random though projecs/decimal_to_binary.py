@@ -9,4 +9,4 @@ def decimal_to_binary(number):
     binary_num = "".join(map(str, binary))
     print("0b" + str(binary_num))
     
-decimal_to_binary(8391)
+decimal_to_binary(4321)
