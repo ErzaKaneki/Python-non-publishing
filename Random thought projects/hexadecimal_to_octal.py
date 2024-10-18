@@ -13,4 +13,4 @@ def decimal_to_octal(decimal):
     octal_num = "".join(map(str, octal))
     print("0o" + str(octal_num))
     
-decimal_to_octal(hex_to_decimal("0xDAD"))
+decimal_to_octal(hex_to_decimal("0xB0B"))
