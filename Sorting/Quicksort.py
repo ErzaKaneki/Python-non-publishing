@@ -6,6 +6,7 @@ def quicksort(list, start, end):
     
     pivot_idx = randrange(start, end + 1)
     pivot_element = list[pivot_idx]
+    
     list[end], list[pivot_idx] = list[pivot_idx], list[end]
 
     less_than_pointer = start
